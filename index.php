@@ -54,12 +54,21 @@
     <main>
         <div class="container">
         <!-- stampare in pagina gli $hotels -->
-        <?php
-        for($i=0; $i<count($hotels); $i++) {
-            $curr_hotel = $hotels[$i];
-            var_dump($curr_hotel);
-        }
-        ?>
+            <?php
+            for($i=0; $i<count($hotels); $i++) {
+                $curr_hotel = $hotels[$i];
+                //var_dump($curr_hotel);
+            ?>
+            <ul>
+                <li>
+                    <h2> <?php echo $curr_hotel["name"] ?> </h2>
+                    <p> <?php echo $curr_hotel["description"] ?> </p>
+                    <p> <?php echo $curr_hotel["parking"] ?> </p>
+                    <p> <?php echo $curr_hotel["vote"] ?> </p>
+                    <p> <?php echo $curr_hotel["distance_to_center"] ?> </p>
+                </li>
+            </ul>
+            <?php } ?>
         </div>
     </main>
 </body>
