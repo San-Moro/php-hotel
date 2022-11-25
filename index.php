@@ -57,25 +57,24 @@
         <!-- stampare in pagina gli $hotels -->
             <?php
             for($i=0; $i<count($hotels); $i++) { 
-                $curr_hotel = $hotels[$i];
+                $curr_hotel = $hotels[$i]; ?>
 
-                foreach($curr_hotel as $key => $value) { ?>
-                    
-                    <table class="table">
-                        <thead >
-                            <tr>
-                                <th scope="col"><?php echo $key ?></th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><?php echo $value ?></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
-                <?php } ?>
+                <table class="table">
+                    <thead >
+                        <tr>
+                            <th scope="col"><?php echo $i + 1 ?></th>
+                        </tr>
+                    </thead>
+                    <?php    
+                    foreach($curr_hotel as $key => $value) { ?>                    
+                    <tbody>
+                        <tr>
+                            <th scope="row"><?php echo $key ?></th>
+                            <td><?php echo $value ?></td>
+                        </tr>
+                    </tbody>                    
+                    <?php } ?>
+                </table>
             <?php } ?>
 
         </div>
