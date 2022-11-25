@@ -56,31 +56,28 @@
         <div class="container">
         <!-- stampare in pagina gli $hotels -->
             <?php
-            foreach($hotels as $key => $value) {
+            for($i=0; $i<count($hotels); $i++) { 
+                $curr_hotel = $hotels[$i];
 
-                //var_dump($curr_hotel);
-            ?>
-            <table class="table">
-                <thead class="table-secondary">
-                    <tr>
-                        <th scope="col"><?php echo $key; ?></th>
-                        <!-- <th scope="col">description</th>
-                        <th scope="col">parking</th>
-                        <th scope="col">vote</th>
-                        <th scope="col">distance_to_center</th> -->
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row"><?php echo $value?></th>
-                        <td><?php echo $value; ?></td>
-                        <td><?php echo $value; ?></td>
-                        <td><?php echo $value; ?></td>
-                        <td><?php echo $value; ?></td>
-                    </tr>
-                </tbody>
-            </table>
+                foreach($curr_hotel as $key => $value) { ?>
+                    
+                    <table class="table">
+                        <thead >
+                            <tr>
+                                <th scope="col"><?php echo $key ?></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $value ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                <?php } ?>
             <?php } ?>
+
         </div>
     </main>
 </body>
